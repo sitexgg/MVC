@@ -17,32 +17,14 @@
 
         <script type="text/javascript" src="/public/js/jquery.js"></script>
         <script type="text/javascript" src="/public/js/ajax.js"></script>
-
-        <style type="text/css">
-
-            .date {
-                font-family: serif;
-                color: white;
-                margin: 5px;
-            }
-
-        </style>           
+          
     </head>
     <body>
 
         <main id="main" class="all_content">
             
-            <header>
-                <details class="menu_block">
-                <summary>MENU</summary>
-                    <nav class="container">
-                        <a href="http://webnet/" class="link_menu">Home</a>
-                        <a href="http://webnet/contact/" class="link_menu">Contact</a>
-                        <a href="http://webnet/account/register/" class="link_menu">Register</a>
-                        <a href="http://webnet/account/login/" class="link_menu">Sign in</a>
-                        <a href="http://webnet/news/show/" class="link_menu">News</a>
-                    </nav> 
-                </details>
+            <header id="header">
+              
             </header>
                 
                 
@@ -54,7 +36,6 @@
         </main>
         
         <script type="text/javascript" src="/public/js/jquery.js"></script>
-        <script type="text/javascript" src="/public/js/date.js"></script>
 
     </body>
 </html>
