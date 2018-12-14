@@ -4,10 +4,11 @@ return [
 
 	'all' => [
 		'register',
+		'login',
 	],
 
 	'authorize' => [
-		'login',
+		
 	],
 
 	'guest' => [
