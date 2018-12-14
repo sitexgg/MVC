@@ -8,6 +8,9 @@ use app\core\Controller;
 class AccountController extends Controller {
 
 	public function loginAction() {
+		if (!empty($_POST)) {
+			$this->view->location('/account/register');
+		}
 		$this->view->render('Авторизация');
 	}
 

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	$('form').submit(function(event) {
-
+		var json;
 		event.preventDefault(); // Функция отмены отправки в браузере. 
 	
 		$.ajax({
@@ -14,6 +14,7 @@ $(document).ready(function() {
 			processData: false,
 
 			success: function(result){
+				json = jQuery.parseJSON(result);
 				if (json.url) {
 					window.location.href = json.url;
 				} else {

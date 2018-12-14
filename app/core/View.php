@@ -42,5 +42,13 @@ class View { // Создаем класс
 			require $path;
 		}
 		exit;
+	}
+
+	public function message($status, $message) {
+		exit(json_encode(['status' => $status, 'massege' => $message]));
+	}
+
+	public function location($url) {
+		exit(json_encode(['url' => $url]));
 	}	
 }

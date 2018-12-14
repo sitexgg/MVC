@@ -8,9 +8,15 @@ abstract class Controller { // Создаем абстрактный класс
 
 	public $route; // Публичное свойство хранящее 
 	public $view;
+	public $ac;
 
 	public function __construct($route) {
 		$this->route = $route;
+		
+			if (!$this->checkAc()) {
+				View::errorCode(403);
+			}
+
 		$this->view = new View($route);
 		$this->model = $this->loadModel($route['controller']);
 	}
@@ -24,5 +30,26 @@ abstract class Controller { // Создаем абстрактный класс
 		if(class_exists($path)) {
 			return new $path;
 		}
+	}
+
+	public function checkAc() {
+		$this->ac = require 'app/ac/'.$this->route['controller'].'.php';
+		if ($this->isAc('all')) {
+			return true;
+		}
+		elseif (isset($_SESSION['authorize']['id']) and $this->isAc('authorize')) {
+			return true;
+		}
+		elseif (isset($_SESSION['authorize']['id']) and $this->isAc('guest')) {
+			return true;
+		}
+		elseif (isset($_SESSION['admin']) and $this->isAc('admin')) {
+			return true;
+		}
+		return false;
+	}
+
+	public function isAc($key) {
+		return in_array($this->route['action'], $this->ac[$key]);
 	}
 }
