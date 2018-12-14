@@ -3,8 +3,8 @@
 return [
 
 	'all' => [
-		'register',
-		'login',
+		'index',
+		'contact',
 	],
 
 	'authorize' => [
