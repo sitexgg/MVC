@@ -14,7 +14,11 @@ $(document).ready(function() {
 			processData: false,
 
 			success: function(result){
-				$(".form").append('<div style="background:red;">'+result+'</div>');
+				if (json.url) {
+					window.location.href = json.url;
+				} else {
+					alert(json.status + ' - ' + json.message);
+				}
 			},
 			
 
