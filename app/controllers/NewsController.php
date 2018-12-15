@@ -7,6 +7,10 @@ use app\core\Controller;
 class NewsController extends Controller {
 
 	public function showAction() {
-		$this->view->render('Новости');
+		$result = $this->model->getNews();
+		$vars = [
+			'news' => $result,
+		];
+		$this->view->render('Новости', $vars);
 	}
 }

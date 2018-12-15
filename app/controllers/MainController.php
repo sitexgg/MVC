@@ -7,11 +7,7 @@ use app\core\Controller;
 class MainController extends Controller {
 
 	public function indexAction() {
-		$result = $this->model->getNews();
-		$vars = [
-			'news' => $result,
-		];
-		$this->view->render('Home', $vars);
+		$this->view->render('Home');
 	}
 
 	public function contactAction() {

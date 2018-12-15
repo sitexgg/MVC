@@ -20,7 +20,7 @@
           
     </head>
     <body>
-
+        
         <main id="main" class="all_content">
             
             <header id="header">
@@ -30,7 +30,7 @@
     
 
             <footer id="footer">
-              
+              <?=$vars['news'][3]['description']?>
             </footer>
 
         </main>

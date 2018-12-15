@@ -3,6 +3,7 @@
 return [
 
 	'all' => [
+		'index',
 		'register',
 		'login',
 	],
