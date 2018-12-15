@@ -45,7 +45,7 @@ class View { // Создаем класс
 	}
 
 	public function message($status, $message) {
-		exit(json_encode(['status' => $status, 'massege' => $message]));
+		exit(json_encode(['status' => $status, 'message' => $message]));
 	}
 
 	public function location($url) {

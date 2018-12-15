@@ -33,9 +33,4 @@
               <?=$vars['news'][3]['description']?>
             </footer>
 
-        </main>
-        
-
-
-    </body>
-</html>
+    

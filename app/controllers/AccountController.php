@@ -9,7 +9,7 @@ class AccountController extends Controller {
 
 	public function loginAction() {
 		if (!empty($_POST)) {
-			$this->view->location('/account/register');
+			$this->view->message('Errors', 'message');
 		}
 		$this->view->render('Авторизация');
 	}
