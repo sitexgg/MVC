@@ -20,7 +20,8 @@ class Router {
 	}
 
 	public function add($route, $params) {
-
+		 // Создаем из $route регулярное выражение с ограничителями
+		 // и символом начала и конца строки
 		$route = '#^'.$route.'$#'; 
 		$this->routes[$route] = $params;
 	}
@@ -45,7 +46,7 @@ class Router {
 		if ($this->match() ) {
 			$path = 'app\controllers\\'.ucfirst($this->params['controller']).'Controller';
 			
-			if (class_exists($path) ) {
+			if (class_exists($path) ) { // 8gg001{7776660054fepipe76}dbqqbq{fepipe76!!QQ!!QQ}webnet.kz{43Jhon76Wick}
 				$action = $this->params['action'].'Action';
 				
 				if (method_exists($path, $action) ) {
