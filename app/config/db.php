@@ -3,8 +3,8 @@
 return [
 'host' => 'localhost',
 'name' => 'new',
-'user' => 'admin',
-'pass' => '123',
+'user' => 'root',
+'pass' => 'ghbdtnltnrf1!!QQ',
 'port' => 3306,
 'driver' => 'mysql',
 'charset' => 'utf8',

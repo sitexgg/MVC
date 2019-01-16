@@ -1,9 +1,10 @@
-
+# Кодировка
 AddDefaultCharset utf-8
-
-Options +FollowSymlinks
-#RewriteEngine On
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-
-#RewriteRule ^ index.php [L]
+# Включение мода rewrite
+#Для работы мода необходимо его включить командой a2enmod rewrite
+RewriteEngine On  
+# Если файл или дериктория не существуют
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+# То перенаправляем на 
+RewriteRule ^(.*)$ ./index.php
