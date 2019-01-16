@@ -19,18 +19,6 @@
         <script type="text/javascript" src="/public/js/ajax.js"></script>
           
     </head>
-    <body>
-        
-        <main id="main" class="all_content">
-            
-            <header id="header">
-              
-            </header>
-                
     
-
-            <footer id="footer">
-              <?=$vars['news'][3]['description']?>
-            </footer>
 
     

@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core; // Включение в пространство имен
+namespace app\core; 
 
-class View { // Создаем класс
+class View {
 
 	public $path; 
 	public $route;
