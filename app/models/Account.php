@@ -24,9 +24,7 @@ class Account extends Model
 			$params = ['login' => $this->login, 'pass' => $this->pass];
 
 			$stmt = $this->db->prepare($sql);
-			$stmt->execute($params);
-
-			
+			$stmt->execute($params);	
 		}		
     }
 }

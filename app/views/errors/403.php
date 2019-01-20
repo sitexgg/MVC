@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&amp;subset=latin,latin-ext">
 		<link rel="stylesheet" type="text/css" href="https://cdn.travel.sygic.com/travel.sygic.com_lp/css/404.css?059b25a92999d27a320dcb6ffeace38727197a11">
 		<link rel="shortcut icon" href="/public/img/mini_logo.png" type="image/png">
-        <title>	404 Страница не найдена</title>
+        <title>	403 Нет прав!</title>
 		
 	</head>
 	<body>

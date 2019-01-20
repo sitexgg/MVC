@@ -1,12 +1,12 @@
 <?php
 
-namespace app\core; // Включение в пространство имен
+namespace app\core; 
 
-use app\core\View; // Изпользование класса View
+use app\core\View; 
 
-abstract class Controller { // Создаем абстрактный класс
+abstract class Controller { 
 
-	public $route; // Публичное свойство хранящее 
+	public $route;  
 	public $view;
 	public $ac;
 

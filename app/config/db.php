@@ -2,7 +2,7 @@
 
 return [
 'host' => 'localhost',
-'name' => 'new',
+'name' => 'mvc',
 'user' => 'root',
 'pass' => 'ghbdtnltnrf1!!QQ',
 'port' => 3306,
