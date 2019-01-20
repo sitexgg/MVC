@@ -11,29 +11,27 @@ class Router {
 	protected $params = [];
 	
 	public function __construct() {
+		 //Подключение маршрутов
+		$arr = require_once 'app/config/routes.php';
 		
-		$arr = require 'app/config/routes.php';
-		
-		foreach ($arr as $key => $val) {
+		foreach($arr as $key => $val) {
 			$this->add($key, $val);
 		}
 	}
 
+	 // Добавление маршрутов
 	public function add($route, $params) {
-		 // Создаем из $route регулярное выражение с ограничителями
-		 // и символом начала и конца строки
 		$route = '#^'.$route.'$#'; 
 		$this->routes[$route] = $params;
 	}
 	
+	 // Проверка маршрутов
 	public function match() {
-		
 		$url = trim($_SERVER['REQUEST_URI'], '/');
 
 		foreach ($this->routes as $route => $params) {
 			
-			if (preg_match($route, $url, $matches) ) {
-				
+			if(preg_match($route, $url, $matches) ) {
 				$this->params = $params;
 				return true;
 			}
@@ -41,15 +39,16 @@ class Router {
 		return false;
 	}
 	
+	 //Запуск роутера
 	public function run() {
 		
-		if ($this->match() ) {
+		if($this->match()) {
 			$path = 'app\controllers\\'.ucfirst($this->params['controller']).'Controller';
 			
-			if (class_exists($path) ) { // 8gg001{7776660054fepipe76}dbqqbq{fepipe76!!QQ!!QQ}webnet.kz{43Jhon76Wick}
+			if(class_exists($path) ) {
 				$action = $this->params['action'].'Action';
 				
-				if (method_exists($path, $action) ) {
+				if(method_exists($path, $action)) {
 					$controller = new $path($this->params);
 					$controller->$action();
 				} else {
