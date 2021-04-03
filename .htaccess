@@ -1,12 +1,12 @@
-# Кодировка
+# Encoding
     AddDefaultCharset utf-8
-# Включение мода rewrite
-#Для работы мода необходимо его включить командой a2enmod rewrite
+# Turn on mod rewriteEngine
+# For Apach2 - a2enmod rewrite
     RewriteEngine On  
-# Если файл или дериктория не существуют
+# If file or directory doesn`t exist
     RewriteCond %{SCRIPT_FILENAME} !-d  
     RewriteCond %{SCRIPT_FILENAME} !-f  
-# То перенаправляем на 
+# Redirect to index 
     RewriteRule ^(.*)$ ./index.php
 # LifeTime session and cookie
     #php_value session.gc_maxlifetime 86400

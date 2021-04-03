@@ -1,28 +1,18 @@
 <?php
+
 return [
-// Создаем массив для названий маршрутов
- '' => [
-  'controller' => 'main', // Controller
-  'action' => 'index', // Action
- ],
+    '' => [
+        'controller' => 'main',
+        'action' => 'index'
+    ],
 
- 'contact' => [
-  'controller' => 'main',
-  'action' => 'contact',
- ],
+    'account/login' => [
+        'controller' => 'account',
+        'action' => 'login'
+    ],
 
- 'account/login' => [
-  'controller' => 'account',
-  'action' => 'login',
- ],
-
- 'account/register' => [
- 'controller' => 'account',
- 'action' => 'register',
- ],
-
- 'news/show' => [
-  'controller' => 'news',
-  'action' => 'show',
- ],
+    'account/register' => [
+        'controller' => 'account',
+        'action' => 'register'
+    ],
 ];

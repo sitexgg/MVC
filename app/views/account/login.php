@@ -1,7 +1,12 @@
-<h4>Login</h4>
-<hr>
-<form action="/account/login" method="POST">
-	<p><input type="text" name="name"></p>
-	<p><input type="password" name="pass"></p>
-	<button type="send" name="send">Send</button>
+<h3>Login page</h3>
+<form action="#">
+    <p>
+        <input type="text">
+    </p>
+    <p>
+        <input type="password">
+    </p>
+    <p>
+        <button>Войти</button>
+    </p>
 </form>
