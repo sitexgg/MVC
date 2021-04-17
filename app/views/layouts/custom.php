@@ -8,5 +8,6 @@
 </head>
 <body style="background: black; color: white;">
     <?=$content?>
+    qwe
 </body>
 </html>

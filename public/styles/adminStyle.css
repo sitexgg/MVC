@@ -1,0 +1,170 @@
+@import url('./libs/scroll.css');
+* {
+    /* Переменные */
+    --transitionDuration: 500ms;
+
+    --colorZeroDark: rgb(83, 83, 83);
+    --colorOneDark: rgb(50, 50, 50);
+    --colorTwoDark: rgb(27, 27, 27);
+    --colorBlue: rgb(13, 102, 208);
+    --colorLight: rgb(221, 198, 198);
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition-duration: var(--transitionDuration);
+    outline: none;
+    transition-duration: 600ms;
+}
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    background-color: var(--colorTwoDark);
+}
+.fullScreen {
+    background-color: var(--colorTwoDark);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inp {
+    display: block;
+    width: 90%;
+    margin: 20px;
+    margin-left: 5%;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 3px;
+    color: var(--colorOneDark);
+    background: var(--colorZeroDark);
+    border: none;
+}
+.inp:focus {
+    background: white;
+    padding-left: 20px;
+}
+.btn {
+    display: block;
+    width: 90%;
+    margin: 20px;
+    margin-left: 5%;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    background: var(--colorBlue);
+    color: var(--colorOneDark);
+    border: 1px solid var(--colorBlue);
+}
+.btn:hover {
+    background: var(--colorOneDark);
+    color: var(--colorBlue);
+}
+/***** START CONTENT *****/
+div #content {
+    position: fixed;
+    top: 50px;
+    left: 250px;
+    width: calc(100vw - 250px);
+    height: calc(100vh - 70px);
+    padding: 10px;
+    overflow-y: auto;
+    color: var(--colorLight);
+}
+/***** END CONTENT *****/
+
+/***** START HEADER *****/
+header {
+    background: var(--colorOneDark);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+}
+/***** END HEADER *****/
+
+/***** START LEFT NAV *****/
+nav {
+    background: var(--colorOneDark);
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: top;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 8;
+    width: 250px;
+    border: 1px solid var(--colorTwoDark);
+    overflow-y: auto;
+}
+nav > ul {
+    min-width: 100%;
+}
+.navItem {
+    margin: 2px;
+    padding: 5px;
+    background-color: var(--colorZeroDark);
+    color: var(--colorLight);
+    display: flex;
+    vertical-align: center;
+    line-height: 1.5rem;
+}
+.navItem > img {
+    margin: 2px;
+    max-height: 1.2rem;
+    max-width: 2rem;
+    padding-right: 8px;
+}
+.navItem:hover {
+    cursor: pointer;
+    padding-left: 12px;
+    color: white;
+    background-color: var(--colorBlue);
+}
+.navItemActive {
+    cursor: pointer;
+    padding-left: 12px;
+    color: white;
+    background-color: var(--colorBlue);
+}
+.hideNavItem {
+    display: none;
+    position: relative;
+    animation: showLeftNavItem 0.2s linear;
+}
+.hideNavItem > .navItem {
+    margin-left: 20px;
+}
+@keyframes showLeftNavItem {
+    0% {
+        left: -200px;
+        z-index: -1;
+    }
+    70% {
+        left: 0;
+        z-index: -1;
+    }
+}
+/***** END LEFT NAV *****/
+
+/***** START FOOTER *****/
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 20px;
+    width: 100vw;
+    left: 0;
+    background-color: var(--colorOneDark);
+    display: flex;
+    vertical-align: center;
+    color: var(--colorLight);
+    padding: 3px;
+}
+/***** END FOOTER *****/

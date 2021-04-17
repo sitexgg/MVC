@@ -1,0 +1,151 @@
+* {
+    /* Переменные */
+    --transitionDuration: 500ms;
+
+    --colorZeroDark: rgb(255, 255, 255);
+    --colorOneDark: rgb(255, 255, 255);
+    --colorTwoDark: rgb(255, 255, 255);
+    --colorThreeDark: rgb(255, 255, 255);
+
+    --colorHeader: rgb(25, 50, 70);
+    --colorHeaderHoverText: rgb(204, 204, 204);
+    --colorWhite: rgb(255, 255, 255);
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition-duration: var(--transitionDuration);
+    outline: none;
+    transition-duration: 600ms;
+}
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    height: 100vh;
+    width: 100vh;
+}
+.fullScreen {
+    background-color: var(--colorTwoDark);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inp {
+    display: block;
+    width: 90%;
+    margin: 20px;
+    margin-left: 5%;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--colorOneDark);
+    background: var(--colorZeroDark);
+    border: none;
+}
+.inp:focus {
+    background: white;
+    padding-left: 20px;
+}
+.btn {
+    display: block;
+    width: 90%;
+    margin: 20px;
+    margin-left: 5%;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background: var(--colorThreeDark);
+    color: var(--colorOneDark);
+    border: 1px solid var(--colorThreeDark);
+}
+.btn:hover {
+    background: var(--colorOneDark);
+    color: var(--colorThreeDark);
+}
+/***** START HEADER *****/
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;
+    background-color: var(--colorHeader);
+    color: var(--colorWhite);
+}
+menu {
+    color: var(--colorWhite);
+    width: 50%;
+    display: inline-block;
+}
+menu > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+menu > ul > .menuItem {
+    list-style: none;
+    line-height: 40px;
+    transition-duration: 200ms;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+menu > ul > .menuItem:hover {
+    cursor: pointer;
+    color: var(--colorHeaderHoverText);
+}
+.lang {
+    height: 100%;
+    margin: 0 10px;
+    padding: 0 5px;
+    border-left: 1px solid var(--colorWhite);
+    border-right: 1px solid var(--colorWhite);
+}
+.lang > span {
+    line-height: 40px;
+}
+.lang > span:hover {
+    cursor: pointer;
+}
+/***** END HEADER *****/
+/***** START HEADER TWO *****/
+.headerTwo {
+    position: relative;
+    display: flex;
+    top: 40px;
+    left: 0;
+    min-height: 90px;
+    background-color: var(--colorWhite);
+    width: 100vw;
+
+    border-bottom: 1px solid black;
+}
+.headerTwo > .logo {
+    display: flex;
+    align-items: center;
+}
+.headerTwo > .logo:hover {
+    cursor: pointer;
+}
+.headerTwo > .logo > img {
+    max-height: 80px;
+    margin: 5px;
+}
+.headerTwo > .logo > img:hover {
+    animation: spinLogo 0.2s linear;
+}
+@keyframes spinLogo {
+    50% {
+        transform: rotateY(180deg);
+    }
+}
+.headerTwo > .logo > p {
+    display: inline;
+}
+/***** END HEADER TWO *****/
