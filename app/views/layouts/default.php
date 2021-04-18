@@ -32,7 +32,11 @@
     <div class="headerTwo">
         <div class="logo" onclick="location.href = '/'">
             <img src="/public/img/logo.png" alt="Логотип Казахского Государственного Женского Педагогического Университета Научной библиотеки">
-            <p><?=$title?></p>
+            <h1><?=$shortDes?></h1>
+            <img src="/public/img/logo.png" alt="Логотип Казахского Государственного Женского Педагогического Университета Научной библиотеки">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="<?php switch($_SESSION['lang']) {case 'ru': echo 'Поиск';break; case 'kz': echo 'Ізденіс';break; case 'en': echo 'Search';break;} ?>">
         </div>
     </div>
 

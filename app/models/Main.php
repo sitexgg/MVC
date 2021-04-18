@@ -10,9 +10,10 @@ class Main extends Model {
         return $menu;
     }
 
-    public function getDataItexPage() {
-        $title = $this->db->row('SELECT title_'.$_SESSION['lang'].' FROM mvc_index_page');
-        $titleOf = 'title_'.$_SESSION['lang'];
-        return html_entity_decode($title[0][$titleOf]);
+    public function getDataOfHeader() {
+        $short_des = $this->db->row('SELECT short_des_'.$_SESSION['lang'].' FROM mvc_index_page');
+        $short_desOf = 'short_des_'.$_SESSION['lang'];
+        $short_des = html_entity_decode($short_des[0][$short_desOf]);
+        return $short_des;
     }
 }

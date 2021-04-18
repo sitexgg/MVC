@@ -8,7 +8,6 @@
     --colorThreeDark: rgb(255, 255, 255);
 
     --colorHeader: rgb(25, 50, 70);
-    --colorHeaderHoverText: rgb(204, 204, 204);
     --colorWhite: rgb(255, 255, 255);
     
     margin: 0;
@@ -23,7 +22,7 @@ html, body {
     overflow-x: hidden;
     font-family: sans-serif;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 .fullScreen {
     background-color: var(--colorTwoDark);
@@ -77,6 +76,7 @@ header {
     height: 40px;
     background-color: var(--colorHeader);
     color: var(--colorWhite);
+    box-shadow: 0 0 10px rgba(25, 50, 70, 1);
 }
 menu {
     color: var(--colorWhite);
@@ -95,10 +95,12 @@ menu > ul > .menuItem {
     font-weight: 500;
     font-size: 0.9rem;
     text-transform: uppercase;
+    padding: 0 6px;
 }
 menu > ul > .menuItem:hover {
     cursor: pointer;
-    color: var(--colorHeaderHoverText);
+    color: var(--colorHeader);
+    background-color: var(--colorWhite);
 }
 .lang {
     height: 100%;
@@ -120,15 +122,14 @@ menu > ul > .menuItem:hover {
     display: flex;
     top: 40px;
     left: 0;
-    min-height: 90px;
-    background-color: var(--colorWhite);
+    min-height: 110px;
     width: 100vw;
-
-    border-bottom: 1px solid black;
 }
 .headerTwo > .logo {
     display: flex;
     align-items: center;
+    width: 70vw;
+    justify-content: space-between;
 }
 .headerTwo > .logo:hover {
     cursor: pointer;
@@ -139,6 +140,28 @@ menu > ul > .menuItem:hover {
 }
 .headerTwo > .logo > img:hover {
     animation: spinLogo 0.2s linear;
+}
+.headerTwo > .logo > h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--colorHeader);
+}
+.headerTwo > .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+}
+.headerTwo > .search > input {
+    width: 18vw;
+    font-size: 1.4rem;
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 2px solid var(--colorHeader);
+}
+.headerTwo > .search > input:focus {
+    width: 28vw;
+    font-size: 1.5rem;
 }
 @keyframes spinLogo {
     50% {

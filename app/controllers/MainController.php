@@ -6,18 +6,18 @@ use app\core\Controller;
 class MainController extends Controller {
 
 	public function __cunstruct() {
-		
 	}
     
     public function indexAction() {
         $menu = $this->model->getMenu();
-		$title = $this->model->getDataItexPage();
+		$shortDes = $this->model->getDataOfHeader();
+		
         $data = [
 					'menu' => $menu,
-				 	'title' => $title
+				 	'shortDes' => $shortDes
 				];
 				
-        $this->view->render($title, $data);
+        $this->view->render('Главная страница', $data);
     }
 
 	public function qweAction() {
@@ -26,7 +26,13 @@ class MainController extends Controller {
 
     public function qqAction() {
 		$menu = $this->model->getMenu();
-        $data = ['menu' => $menu];
+		$shortDes = $this->model->getDataOfHeader();
+
+        $data = [
+			'menu' => $menu,
+			'shortDes' => $shortDes
+		];
+
         $this->view->render('qq', $data); 
    }
 	public function qwe1Action() {
