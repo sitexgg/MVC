@@ -274,16 +274,4 @@ footer > hr {
 .datSliderActive {
     color:rgba(255, 255, 255, 1);
 }
-.slides {
-    position: relative;
-    animation: showSlide 0.3s linear;
-}
-@keyframes showSlide {
-    0% {
-        left: -100%;
-    }
-    50% {
-        left: 0;
-    }
-}
 /***** END SLIDER *****/
