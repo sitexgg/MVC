@@ -16,4 +16,9 @@ class Main extends Model {
         $short_des = html_entity_decode($short_des[0][$short_desOf]);
         return $short_des;
     }
+    public function getCompany() {
+        $result = $this->db->row('SELECT adress_'.$_SESSION['lang'].', phone, fax, email FROM mvc_company');
+        $company = $result[0];
+        return $company;
+    }
 }

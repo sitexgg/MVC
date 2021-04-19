@@ -11,10 +11,12 @@ class MainController extends Controller {
     public function indexAction() {
         $menu = $this->model->getMenu();
 		$shortDes = $this->model->getDataOfHeader();
+		$company = $this->model->getCompany();
 		
         $data = [
 					'menu' => $menu,
-				 	'shortDes' => $shortDes
+				 	'shortDes' => $shortDes,
+					'company' => $company
 				];
 				
         $this->view->render('Главная страница', $data);
