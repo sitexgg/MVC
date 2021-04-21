@@ -10,16 +10,19 @@ class AccountController extends Controller {
         if(isset($_POST['login']) && isset($_POST['pass'])) {
             $this->model->signIn($_POST['login'], $_POST['pass']); 
         }
-
+        $this->custom();
         $this->view->render('Страница авторизации');
     }
 
     public function registerAction() {
-		$data = [
-			'age' => 88,
-			'arr' => [1, 2, 3],
-			'name' => 'Bill'
-		];
-        $this->view->render('Register Page', $data);
+        if(isset($_POST['login']) && isset($_POST['pass'])) {
+            $this->model->signUp($_POST['login'], $_POST['pass'], $_POST['pass2']); 
+        }
+        $this->custom();
+        $this->view->render('Страница регистрации');
+    }
+
+    public function logoutAction() {
+        $this->model->logout();
     }
 }

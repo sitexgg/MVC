@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 * {
     /* Переменные */
     --transitionDuration: 500ms;
@@ -27,6 +28,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: 'Ubuntu', sans-serif;
 }
 .fullScreen {
     background-color: var(--colorTwoDark);
@@ -74,6 +76,8 @@ header {
     position: fixed;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
     top: 0;
     left: 0;
     width: 100vw;
@@ -85,7 +89,7 @@ header {
 }
 menu {
     color: var(--colorWhite);
-    width: 50%;
+    width: 70%;
     display: inline-block;
 }
 menu > ul {
@@ -98,7 +102,8 @@ menu > ul > .menuItem {
     line-height: 40px;
     transition-duration: 200ms;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
     text-transform: uppercase;
     padding: 0 6px;
 }
@@ -119,6 +124,44 @@ menu > ul > .menuItem:hover {
 }
 .lang > span:hover {
     cursor: pointer;
+}
+.account {
+    display: flex;
+    align-items: center;
+}
+.account:hover {
+    cursor: pointer;
+}
+.account > img {
+    max-height: 36px;
+    padding-right: 5px;
+}
+.account > p > span:hover {
+    text-decoration: underline;
+    color: var(--colorHalfWhite);
+}
+.menuItem:hover > ul {
+    display: block;
+}
+.hideMenuItem {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    background-color: var(--colorWhite);
+    box-shadow: 0 5px 10px rgb(90, 83, 83);
+}
+.hideMenuItem > li {
+    list-style: none;
+    transition-duration: 200ms;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 0 6px;
+    border-bottom: 1px solid rgba(25, 50, 70, 0.1)
+}
+.hideMenuItem > li:hover {
+    background-color: var(--colorHeader);
+    color: var(--colorWhite);
 }
 /***** END HEADER *****/
 /***** START HEADER TWO *****/
@@ -156,17 +199,18 @@ menu > ul > .menuItem:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30vw;
+    width: 40vw;
 }
 .headerTwo > .search > input {
     width: 18vw;
     font-size: 1.4rem;
     padding: 6px 12px;
+    padding-right: 40px;
     border-radius: 50px;
     border: 2px solid var(--colorHeader);
 }
 .headerTwo > .search > input:focus {
-    width: 28vw;
+    width: 38vw;
     font-size: 1.5rem;
 }
 @keyframes spinLogo {

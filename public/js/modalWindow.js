@@ -32,6 +32,7 @@ function modalWindow(messages) {
 		// Text window
 		let	modalP = document.createElement('p');
 			modalP.style.textAlign = 'center';
+			modalP.style.color = 'black';
 			modalP.textContent = messages;
 		let style = document.createElement('style');
 			animation = '@keyframes showModalAnim { 0% {top: -500px;} 70% {top: 8px;}} .showModal {animation: showModalAnim 0.3s linear;} '+

@@ -19,8 +19,7 @@
                 <img src="/public/img/admin/leftNav/settings.svg">Настройки</li>
                 <ul class="hideNavItem">
                     <li class="navItem" url-data="/admin/settings" onclick="location.href = '/admin/settings'">Основные</li>
-                    <li class="navItem" onclick="location.href = '/admin/settings'">Настройки</li>
-                    <li class="navItem" onclick="location.href = '/admin/settings'">Настройки</li>
+                    <li class="navItem" url-data="/admin/menu" onclick="location.href = '/admin/menu'">Настройки меню</li>
                 </ul>
                 <li class="navItem" url-data="/admin/createPage" onclick="location.href = '/admin/createPage'">
                     <img src="/public/img/admin/leftNav/createPage.svg">Новая страница</li>

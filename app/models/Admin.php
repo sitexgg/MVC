@@ -37,4 +37,54 @@ class Admin extends Model {
 
         exit('Страница создана');
     }
+
+    public function changeMenuValue($id, $item) {
+        $res = $this->db->insert('UPDATE mvc_menu_'.$_SESSION['lang'].' SET item = "'.$item.'" WHERE id = '.$id);
+        return $res;
+    }
+
+    public function changeMenuLink($id, $link) {
+        $res = $this->db->insert('UPDATE mvc_menu_'.$_SESSION['lang'].' SET link = "'.$link.'" WHERE id = '.$id);
+        return $res;
+    }
+
+    public function deletedMenu($id) {
+        $res = $this->db->insert('DELETE FROM mvc_menu_'.$_SESSION['lang'].' WHERE id = '.$id);
+        return $res;
+    }
+
+    public function changeSubMenuValue($id, $item) {
+        $res = $this->db->insert('UPDATE mvc_submenu_'.$_SESSION['lang'].' SET item = "'.$item.'" WHERE id = '.$id);
+        return $res;
+    }
+
+    public function changeSubMenuLink($id, $link) {
+        $res = $this->db->insert('UPDATE mvc_submenu_'.$_SESSION['lang'].' SET link = "'.$link.'" WHERE id = '.$id);
+        return $res;
+    }
+
+    public function deletedSubMenu($id) {
+        $res = $this->db->insert('DELETE FROM mvc_submenu_'.$_SESSION['lang'].' WHERE id = '.$id);
+        return $res;
+    }
+
+    public function appendSubMenu($id) {
+        $res = $this->db->insert('INSERT INTO mvc_submenu_'.$_SESSION['lang'].' (`item`, `link`, `menu_id`) VALUES ("Новый элемент", "/main/index", "'.$id.'")');
+        return $res;
+    }
+
+    public function appendMenu() {
+        $res = $this->db->insert('INSERT INTO mvc_menu_'.$_SESSION['lang'].' (`item`, `link`) VALUES ("Новый элемент", "/main/index")');
+        return $res;
+    }
+
+    public function getMenu() {
+        $menu = $this->db->row('SELECT `id`, `item`, `link` FROM mvc_menu_'.$_SESSION['lang']);
+        return $menu;
+    }
+
+    public function getSubMenu() {
+        $subMenu = $this->db->row('SELECT `menu_id`, `id`, `item`, `link` FROM mvc_submenu_'.$_SESSION['lang']);
+        return $subMenu;
+    }
 }

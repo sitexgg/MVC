@@ -33,12 +33,62 @@
     font-weight: 100;
 }
 </style>
+<?php
+    $signin = '';
+    switch($_SESSION['lang']) {
+        case 'ru':
+            $signin = 'Вход';
+        break;
+        case 'kz':
+            $signin = 'Кіру';
+        break;
+        case 'en':
+            $signin = 'Sign In';
+        break;
+    }
+    $login = '';
+    switch($_SESSION['lang']) {
+        case 'ru':
+            $login = 'Вход';
+        break;
+        case 'kz':
+            $login = 'Аты';
+        break;
+        case 'en':
+            $login = 'Login';
+        break;
+    }
+    $password = '';
+    switch($_SESSION['lang']) {
+        case 'ru':
+            $password = 'Пароль';
+        break;
+        case 'kz':
+            $password = 'Пароль';
+        break;
+        case 'en':
+            $password = 'Password';
+        break;
+    }
+    $err = '';
+    switch($_SESSION['lang']) {
+        case 'ru':
+            $err = 'Введите логин !';
+        break;
+        case 'kz':
+            $err = 'Логинді енгізіңіз !';
+        break;
+        case 'en':
+            $err = 'Enter login !';
+        break;
+    }
+?>
 <div class="fullScreen">
     <form name="loginForm" class="signin">
-        <h2>Авторизация</h2>
-        <input type="text" class="inp" placeholder="Логин" name="login">
-        <input type="password" class="inp" placeholder="Пароль" name="pass">
-        <input class="btn" onclick="let login = document.querySelector('input[name=\'login\''); if(login.value == '') {modalWindow('Введите логин !'); return false;}" value="Войти" name="signin" type="submit">
+        <h2><?=$signin?></h2>
+        <input type="text" class="inp" placeholder="<?=$login?>" name="login">
+        <input type="password" class="inp" placeholder="<?=$password?>" name="pass">
+        <input class="btn" onclick="let login = document.querySelector('input[name=\'login\''); if(login.value == '') {modalWindow('<?=$err?>'); return false;}" value="<?=$signin?>" name="signin" type="submit">
     </form>
 </div>
 

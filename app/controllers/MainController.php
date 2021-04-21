@@ -6,41 +6,25 @@ use app\core\Controller;
 class MainController extends Controller {
 
 	public function __cunstruct() {
+
 	}
     
     public function indexAction() {
-        $menu = $this->model->getMenu();
-		$shortDes = $this->model->getDataOfHeader();
-		$company = $this->model->getCompany();
-		
-        $data = [
-					'menu' => $menu,
-				 	'shortDes' => $shortDes,
-					'company' => $company
-				];
-				
-        $this->view->render('Главная страница', $data);
+        $this->view->render('Главная страница', $this->model->getData());
     }
 
 	public function qweAction() {
-		 $this->view->render('weqffasdfas'); 
+		$data = $this->model->getData();
+		$this->view->render('weqffasdfas', $this->model->getData()); 
 	}
 
     public function qqAction() {
-		$menu = $this->model->getMenu();
-		$shortDes = $this->model->getDataOfHeader();
-
-        $data = [
-			'menu' => $menu,
-			'shortDes' => $shortDes
-		];
-
-        $this->view->render('qq', $data); 
+        $this->view->render('qq', $this->model->getData()); 
    }
 	public function qwe1Action() {
-		 $this->view->render('weqffasdfas'); 
+		 $this->view->render('weqffasdfas', $this->model->getData()); 
 	}
 	public function zxcvzxcvzxcAction() {
-		 $this->view->render('12312312312312312'); 
+		 $this->view->render('12312312312312312', $this->model->getData()); 
 	}
 }

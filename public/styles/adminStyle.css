@@ -1,4 +1,5 @@
 @import url('./libs/scroll.css');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 * {
     /* Переменные */
     --transitionDuration: 500ms;
@@ -21,6 +22,7 @@ html, body {
     overflow-x: hidden;
     font-family: sans-serif;
     background-color: var(--colorTwoDark);
+    font-family: 'Ubuntu', sans-serif;
 }
 .fullScreen {
     background-color: var(--colorTwoDark);
@@ -62,6 +64,17 @@ html, body {
 .btn:hover {
     background: var(--colorOneDark);
     color: var(--colorBlue);
+}
+.imgBtn {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: var(--colorBlue);
+    max-height: 2rem;
+}
+.imgBtn:hover {
+    cursor: pointer;
+    border-radius: 24px;
+    box-shadow: 0 0 10px black;
 }
 /***** START CONTENT *****/
 div #content {

@@ -1,15 +1,17 @@
 window.onload = function () {
-    document.forms.loginForm.onsubmit = function (e) {
+    document.forms.registerForm.onsubmit = function (e) {
         e.preventDefault();
 
-        let login = document.forms.loginForm.login.value;
+        let login = document.forms.registerForm.login.value;
         login = encodeURIComponent(login);
-        let pass = document.forms.loginForm.pass.value;
+        let pass = document.forms.registerForm.pass.value;
         pass = encodeURIComponent(pass);
+        let pass2 = document.forms.registerForm.pass2.value;
+        pass2 = encodeURIComponent(pass2);
 
         var xhr = new XMLHttpRequest();
 
-        xhr.open('POST', '/account/login');
+        xhr.open('POST', '/account/register');
 
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -17,9 +19,7 @@ window.onload = function () {
         xhr.onreadystatechange = function() {
             if(xhr.readyState === 4 && xhr.status === 200) {
                 // Полученый ответ от сервера
-                if(xhr.responseText == 'authLogin0') {
-                    location.href = '/admin/panel';
-                } else if (xhr.responseText == 'authLogin1') {
+                if(xhr.responseText == 'registration') {
                     location.href = '/main/index';
                 } else {
                     modalWindow(xhr.responseText);
@@ -28,6 +28,6 @@ window.onload = function () {
         }
 
         // Отправка запроса на сервер
-        xhr.send('login=' + login + '&pass=' + pass);
+        xhr.send('login=' + login + '&pass=' + pass + '&pass2=' + pass2);
     }
 };

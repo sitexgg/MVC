@@ -14,11 +14,15 @@ class View {
             $route['action'] = stristr($route['action'], "?", true);
         }
         $this->path = $route['controller'].'/'.$route['action'];
+
+
     }
 
     public function render($title, $data = []) {
 		extract($data);
-		
+        require_once 'app/views/lang/'.$_SESSION['lang'].'.php';
+		extract($lang);
+
         $pathLayout = 'app/views/'.$this->path.'.php';
         if(file_exists($pathLayout)) {
             ob_start();
