@@ -13,13 +13,25 @@
     <img src="/public/img/banners/arrowRight.svg" id="nextSlide" class="arrow arrowTwo">
 </div>
 
-<?php
-
-// echo '<pre>';
-// var_dump();
-
-?>
 <script src="/public/js/slider.js"></script>
 <div class="centerContent">
+    <h3><?=$news?></h3>
+    <div class="newsContent">
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+        <div class="showNews"></div>
+    </div>
+    <h3><?=$newsLib?></p></h3>
+
+    <p><?=$storyLibrary?></p>
+    
+
 
 </div>

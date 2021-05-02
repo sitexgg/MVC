@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/styles/style.css">
+    <link rel="stylesheet" href="/public/styles/mStyle.css">
     <title><?=$title?></title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
@@ -27,11 +28,11 @@
             </ul>
         </menu>
         <div class="lang">
-            <span onclick="location.href = '?lang=kz'">KZ</span>
-            /
-            <span onclick="location.href = '?lang=ru'">RU</span>
-            /
-            <span onclick="location.href = '?lang=en'">EN</span>
+            <span onclick="location.href = '?lang=kz'">KZ </span>
+            &nbsp;/&nbsp;
+            <span onclick="location.href = '?lang=ru'"> RU </span>
+            &nbsp;/&nbsp;
+            <span onclick="location.href = '?lang=en'"> EN</span>
         </div>
         <div class="account">
             <img src="/public/img/user.svg">
@@ -85,10 +86,10 @@
             </div>
             <div>
                 <?php
-                    echo '<b>'.$adress.': </b>'.$company['adress_'.$_SESSION['lang']].'<br>';
-                    echo '<b>'.$phone.': </b>'.$company['phone'].'<br>';
-                    echo '<b>Fax: </b>'.$company['fax'].'<br>';
-                    echo '<b>E-mail: </b>'.$company['email'].'<br>';
+                    echo '<b>'.$adress.' : </b>'.$company['adress_'.$_SESSION['lang']].'<br>';
+                    echo '<b>'.$phone.' : </b>'.$company['phone'].'<br>';
+                    echo '<b>Fax : </b>'.$company['fax'].'<br>';
+                    echo '<b>E-mail : </b>'.$company['email'].'<br>';
                 ?>
             </div>
         </div>
@@ -99,6 +100,8 @@
             </p>
         </div>
     </footer>
+    <script src="/public/js/scroll.js"></script>
+    <script src="/public/js/preloader.js"></script>
     <script src="/public/js/modalWindow.js"></script>
 </body>
 </html>

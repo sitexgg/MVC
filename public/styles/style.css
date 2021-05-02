@@ -1,3 +1,4 @@
+@import url('./libs/scrollWhite.css');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 * {
     /* Переменные */
@@ -20,15 +21,34 @@
     transition-duration: 600ms;
 }
 html, body {
+    font-family: 'Ubuntu', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    font-family: sans-serif;
-    height: 100vh;
-    width: 100vw;
     display: flex;
+    font-weight: 100;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Ubuntu', sans-serif;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(245, 232, 232) 35%, rgb(232, 240, 241) 100%);
+}
+h3 {
+    font-weight: 100;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--colorHeader);
+    margin-bottom: 30px;
+    width: 60%;
+    animation: showH3 10s infinite;
+}
+@keyframes showH3 {
+    0% {
+        width: 60%;
+    }
+    50% {
+        width: 100%
+    }
+    90% {
+        width: 60%;
+    }
 }
 .fullScreen {
     background-color: var(--colorTwoDark);
@@ -71,6 +91,9 @@ html, body {
     background: var(--colorOneDark);
     color: var(--colorThreeDark);
 }
+.centerContent {
+    margin: 10px 20%;
+}
 /***** START HEADER *****/
 header {
     position: fixed;
@@ -80,8 +103,8 @@ header {
     padding: 0 10px;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 40px;
+    width: 100%;
+    height: 60px;
     z-index: 99999999999999999;
     background-color: var(--colorHeader);
     color: var(--colorWhite);
@@ -102,15 +125,19 @@ menu > ul > .menuItem {
     line-height: 40px;
     transition-duration: 200ms;
     font-weight: 500;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     text-transform: uppercase;
     padding: 0 6px;
+}
+.menuItem > span {
+    padding: 14px 0;
 }
 menu > ul > .menuItem:hover {
     cursor: pointer;
     color: var(--colorHeader);
     background-color: var(--colorWhite);
+    box-shadow: 0 0 5px black;
 }
 .lang {
     height: 100%;
@@ -118,9 +145,8 @@ menu > ul > .menuItem:hover {
     padding: 0 5px;
     border-left: 1px solid var(--colorWhite);
     border-right: 1px solid var(--colorWhite);
-}
-.lang > span {
-    line-height: 40px;
+    display: flex;
+    align-items: center;
 }
 .lang > span:hover {
     cursor: pointer;
@@ -128,9 +154,14 @@ menu > ul > .menuItem:hover {
 .account {
     display: flex;
     align-items: center;
+    border: 1px solid var(--colorWhite);
+    padding: 5px;
+    padding-right: 10px;
+    border-radius: 35px;
 }
 .account:hover {
     cursor: pointer;
+    box-shadow: 0 0 10px rgb(98, 90, 90);
 }
 .account > img {
     max-height: 36px;
@@ -142,6 +173,7 @@ menu > ul > .menuItem:hover {
 }
 .menuItem:hover > ul {
     display: block;
+    margin-left: -6px;
 }
 .hideMenuItem {
     display: none;
@@ -168,17 +200,21 @@ menu > ul > .menuItem:hover {
 .headerTwo {
     position: relative;
     display: flex;
-    top: 40px;
+    top: 65px;
     left: 0;
     min-height: 110px;
-    margin-bottom: 35px;
-    width: 100vw;
+    margin-bottom: 70px;
+    box-shadow: 0 0 5px rgb(90, 83, 83);
+    width: 100%;
 }
 .headerTwo > .logo {
     display: flex;
     align-items: center;
-    width: 60vw;
+    width: 60%;
     justify-content: space-between;
+}
+.headerTwo > .logo:hover {
+    width: 120%;
 }
 .headerTwo > .logo:hover {
     cursor: pointer;
@@ -199,18 +235,19 @@ menu > ul > .menuItem:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40vw;
+    width: 40%;
 }
 .headerTwo > .search > input {
-    width: 18vw;
+    width: 50%;
     font-size: 1.4rem;
     padding: 6px 12px;
     padding-right: 40px;
     border-radius: 50px;
-    border: 2px solid var(--colorHeader);
+    border: 0px;
+    box-shadow: 0 0 5px var(--colorHeader);
 }
 .headerTwo > .search > input:focus {
-    width: 38vw;
+    width: 100%;
     font-size: 1.5rem;
 }
 @keyframes spinLogo {
@@ -229,6 +266,7 @@ footer {
     min-height: 400px;
     padding: 20px;
     padding-top: 50px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -272,6 +310,7 @@ footer > hr {
     top: 0;
     left: 0;
     align-items: center;
+    margin-bottom: -55px;
 }
 .imgSlider {
     width: 100%;
@@ -319,3 +358,19 @@ footer > hr {
     color:rgba(255, 255, 255, 1);
 }
 /***** END SLIDER *****/
+/***** START NEWS SLIDER *****/
+.newsContent {
+    display: flex;
+    padding: 5px;
+    min-height: 200px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+.showNews {
+    min-height: 100%;
+    border-radius: 7px;
+    box-shadow: 0 0 5px rgb(185, 185, 185);
+    min-width: 300px;
+    margin: 0 3px;
+}
+/***** END NEWS SLIDER *****/
