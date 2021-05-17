@@ -1,4 +1,4 @@
-<div class="slider">
+<!-- <div class="slider">
     <img src="/public/img/banners/arrowLeft.svg" id="backSlide" class="arrow">
     <div class="imgSlider">
         <img src="/public/img/banners/1.jpg" class="slides">
@@ -11,10 +11,10 @@
         </div>
     </div>
     <img src="/public/img/banners/arrowRight.svg" id="nextSlide" class="arrow arrowTwo">
-</div>
-
-<script src="/public/js/slider.js"></script>
-<div class="centerContent">
+</div> -->
+<?php require_once 'slider.php';?>
+<!-- <script src="/public/js/slider.js"></script> -->
+<div class="centerContent" style="margin-top: 70vh;">
     <h3><?=$news?></h3>
     <div class="newsContent">
         <div class="showNews"></div>
@@ -32,6 +32,8 @@
 
     <p><?=$storyLibrary?></p>
     
-
-
 </div>
+
+
+
+

@@ -103,6 +103,14 @@
     <script src="/public/js/scroll.js"></script>
     <script src="/public/js/preloader.js"></script>
     <script src="/public/js/modalWindow.js"></script>
+    <script src="/public/js/showElems.js"></script>
+    <script>
+        setTimeout(() => {
+            let headerTwo = document.querySelector('.headerTwo')
+            headerTwo.classList.add('showHeaderTwo');
+            headerTwo.style.top = '65px';
+        }, 1000);
+    </script>
 </body>
 </html>
 
