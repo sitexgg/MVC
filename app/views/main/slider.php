@@ -73,6 +73,11 @@
 			box-shadow: 0 0 30px rgb(119, 114, 114);
 			border: 3px solid rgb(255, 255, 255);
 		}
+		@media only screen and (max-width: 1000px) {
+			#contentContainer {
+				display: none;
+			}
+		}
 	</style>
 	<div id="contentContainer" class="trans3d"> 
 	<section id="carouselContainer" class="trans3d" style="background-image: url('https://kazmkpu.kz/images/logo_kz.svg'); background-repeat: none; background-size: cover; border-radius: 1000px;">

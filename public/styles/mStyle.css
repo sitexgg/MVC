@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1000px) {
+.centerContent {
+        margin: 10px 3%;
+}    
 /***** START HEADER *****/
 menu {
     display: none!important;

@@ -14,7 +14,17 @@
 </div> -->
 <?php require_once 'slider.php';?>
 <!-- <script src="/public/js/slider.js"></script> -->
-<div class="centerContent" style="margin-top: 70vh;">
+<style>
+    .centerContent {
+        margin-top: 70vh;
+    }
+    @media only screen and (max-width: 1000px) {
+        .centerContent {
+            margin-top: 20px;
+        }
+    }
+</style>
+<div class="centerContent">
     <h3><?=$news?></h3>
     <div class="newsContent">
         <div class="showNews"></div>
