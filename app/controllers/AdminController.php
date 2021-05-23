@@ -26,7 +26,16 @@ class AdminController extends Controller {
 
     public function newsAction() {
         $this->customAdmin();
-        $this->view->render('Settings Panel');
+        if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date'])) {
+            $this->model->appendNews($_POST['title'], $_POST['content'], $_POST['date']);
+            exit('Добавлена новая новость');
+        }
+
+        $data = [
+            'news' =>  $this->model->getNews()
+        ];
+
+        $this->view->render('News Panel', $data);
     }
 
     public function menuAction() {

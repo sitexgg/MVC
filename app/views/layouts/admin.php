@@ -31,7 +31,19 @@
         <?=$content?>
     </div>
     <footer>
-        access
+        <?php
+            switch($_SESSION['lang']) {
+                case 'kz':
+                    echo 'Казахский';
+                break;
+                case 'ru':
+                    echo 'Русский';
+                break;
+                case 'en':
+                    echo 'Английский';
+                break;
+            }
+        ?>
     </footer>
     <script>
         // Отображение активных элементов меню

@@ -38,6 +38,16 @@ class Admin extends Model {
         exit('Страница создана');
     }
 
+    public function appendNews($title, $content, $date) {
+        $res = $this->db->insert('INSERT INTO mvc_news_'.$_SESSION['lang'].'(title, content, date) VALUES("'.$title.'","'.$content.'","'.$date.'");');
+        return $res;
+    }
+
+    public function getNews() {
+        $menu = $this->db->row('SELECT `id`, `title`, `content`, `date` FROM mvc_news_'.$_SESSION['lang']);
+        return $menu;
+    }
+
     public function changeMenuValue($id, $item) {
         $res = $this->db->insert('UPDATE mvc_menu_'.$_SESSION['lang'].' SET item = "'.$item.'" WHERE id = '.$id);
         return $res;

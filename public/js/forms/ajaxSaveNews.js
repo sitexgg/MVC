@@ -1,24 +1,24 @@
-function appendNews() {
-        
+function appendNews() {    
 
-    let str = '<div style="text-align: center;"><form action="#"><p><input type="text" placeholder="Заголовок"></p><br><p><textarea name="contentNews" id="" cols="30" rows="10"></textarea></p><br><input type="date"></form></div>';
+    let titleNews = document.forms.saveNews.title.value;
+    let contentNews = document.forms.saveNews.content.value;
+    let dateNews = document.forms.saveNews.date.value;
     
-    
 
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/admin/news');
-    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/admin/news');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    // // Обработка запроса на сервер
-    // xhr.onreadystatechange = function() {
-    //     if(xhr.readyState === 4 && xhr.status === 200) {
-    //         // Полученый ответ от сервера
-    //         modalWindow(xhr.responseText);
-    //     }
-    // }
+    // Обработка запроса на сервер
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+            // Полученый ответ от сервера
+            modalWindow(xhr.responseText);
+        }
+    }
 
-    // // Отправка запроса на сервер
-    // xhr.send('item=true');
+    // Отправка запроса на сервер
+    xhr.send('title=' + titleNews + '&content=' + contentNews + '&date=' + dateNews);
 }
 
 
