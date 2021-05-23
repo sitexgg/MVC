@@ -44,8 +44,19 @@ class Admin extends Model {
     }
 
     public function getNews() {
-        $menu = $this->db->row('SELECT `id`, `title`, `content`, `date` FROM mvc_news_'.$_SESSION['lang']);
-        return $menu;
+        $news = $this->db->row('SELECT `id`, `title`, `content`, `date` FROM mvc_news_'.$_SESSION['lang']);
+        return $news;
+    }
+    public function changeNews($id) {
+        $news = $this->db->row('SELECT * FROM mvc_news_'.$_SESSION['lang'].' WHERE id = '.$id);
+        return $news;
+    }
+
+    public function updateNews($id, $title, $content, $date) {
+        $res = $this->db->insert('UPDATE mvc_news_'.$_SESSION['lang'].' SET title = "'.$title.'" WHERE id = '.$id);
+        $res = $this->db->insert('UPDATE mvc_news_'.$_SESSION['lang'].' SET content = "'.$content.'" WHERE id = '.$id);
+        $res = $this->db->insert('UPDATE mvc_news_'.$_SESSION['lang'].' SET date = "'.$date.'" WHERE id = '.$id);
+        return $res;
     }
 
     public function changeMenuValue($id, $item) {

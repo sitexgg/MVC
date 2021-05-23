@@ -26,13 +26,23 @@ class AdminController extends Controller {
 
     public function newsAction() {
         $this->customAdmin();
-        if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date'])) {
+        if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date']) && empty($_POST['idNewsChange'])) {
             $this->model->appendNews($_POST['title'], $_POST['content'], $_POST['date']);
             exit('Добавлена новая новость');
         }
+        if(!empty($_GET['idNews'])) {
+            $news = $this->model->changeNews($_GET['idNews']);
+        }
+        if(!empty($_POST['idNewsChange'])) {
+            $news = $this->model->updateNews($_POST['idNewsChange'], $_POST['title'], $_POST['content'], $_POST['date']);
+            exit('Новость отредактирована');
+        }
+
+        
 
         $data = [
-            'news' =>  $this->model->getNews()
+            'news' =>  $this->model->getNews(),
+            'changeNews' => @$news
         ];
 
         $this->view->render('News Panel', $data);
