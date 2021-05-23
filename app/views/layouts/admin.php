@@ -23,6 +23,8 @@
                 </ul>
                 <li class="navItem" url-data="/admin/createPage" onclick="location.href = '/admin/createPage'">
                     <img src="/public/img/admin/leftNav/createPage.svg">Новая страница</li>
+                <li class="navItem" url-data="/admin/news" onclick="location.href = '/admin/news'">
+                    <img src="/public/img/admin/leftNav/createPage.svg">Новости</li>
             </ul>
     </nav>
     <div id="all">

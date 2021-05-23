@@ -1,5 +1,5 @@
 @import url('./libs/scrollWhite.css');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('./../Gothic.Kz.ttf');
 * {
     /* Переменные */
     --transitionDuration: 500ms;
@@ -21,15 +21,17 @@
     transition-duration: 600ms;
 }
 html, body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Gothic', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
     display: flex;
     font-weight: 100;
     flex-direction: column;
     justify-content: space-between;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(245, 232, 232) 35%, rgb(232, 240, 241) 100%);
+    background: linear-gradient(90deg, #b9deed, #efefef);
+    /* background: url("/public/img/pattern.gif"); */
+    /* background: rgb(255,255,255); */
+    /* background: linear-gradient(90deg, rgb(255, 245, 245) 0%, rgb(245, 222, 222) 35%, rgb(248, 255, 247) 100%); */
 }
 h3 {
     font-weight: 100;
@@ -107,10 +109,52 @@ h3 {
 }
 .centerContent {
     margin: 10px 20%;
-    background-color: white;
-    padding: 30px;
+    width: 1400px;
+    background-color: var(--colorWhite);
+    padding: 20px;
     border-radius: 9px;
     box-shadow: 0 0 20px rgba(245, 232, 232, 0.5);
+}
+.indexContent {
+    display: flex;
+    flex-wrap: wrap;
+}
+.blockPcontent {
+    text-align: center;
+    width: 423px!important;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgb(185, 185, 185);
+    padding: 5px;
+    margin: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.b1i a {
+    color: white;
+}
+.blockPcontent1 {
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgb(185, 185, 185);
+    padding: 5px;
+    margin: 15px;
+    font-size: 1.2rem;
+}
+.blockPcontent1 > img {
+    width: 50%;
+}
+.b1i {
+    background-color: rgb(47, 47, 214);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blockPcontent > ul {
+    list-style: none;
 }
 /***** START HEADER *****/
 header {

@@ -88,6 +88,7 @@ function appendMenu() {
         if(xhr.readyState === 4 && xhr.status === 200) {
             // Полученый ответ от сервера
             modalWindow(xhr.responseText);
+            setTimeout(() => {location.reload()}, 2000);
         }
     }
 
@@ -105,6 +106,7 @@ function appendSubMenu(id) {
         if(xhr.readyState === 4 && xhr.status === 200) {
             // Полученый ответ от сервера
             modalWindow(xhr.responseText);
+            setTimeout(() => {location.reload()}, 2000);
         }
     }
 
@@ -124,6 +126,7 @@ function deletedMenu(link) {
         if(xhr.readyState === 4 && xhr.status === 200) {
             // Полученый ответ от сервера
             modalWindow(xhr.responseText);
+            setTimeout(() => {location.reload()}, 2000);
         }
     }
 
@@ -143,6 +146,7 @@ function deletedSubMenu(link) {
         if(xhr.readyState === 4 && xhr.status === 200) {
             // Полученый ответ от сервера
             modalWindow(xhr.responseText);
+            setTimeout(() => {location.reload()}, 2000);
         }
     }
 

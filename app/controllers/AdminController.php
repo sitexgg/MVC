@@ -24,6 +24,11 @@ class AdminController extends Controller {
         $this->view->render('Settings Panel');
     }
 
+    public function newsAction() {
+        $this->customAdmin();
+        $this->view->render('Settings Panel');
+    }
+
     public function menuAction() {
         $this->customAdmin();
 

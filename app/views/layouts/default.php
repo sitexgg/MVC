@@ -68,11 +68,11 @@
         <br>
         <hr>
         <div class="footerContent">
-            <div style="width: 20%;">
+            <div>
                 <div class="footerLogo" onclick="location.href = '/'">
                     <img src="/public/img/logoTwo.png" style="background: white; border-radius: 100px;" alt="Логотип Казахского Государственного Женского Педагогического Университета Научной библиотеки">
                     <img src="/public/img/logo.png" alt="Логотип Казахского Государственного Женского Педагогического Университета Научной библиотеки">
-                    <h1 style="width: 50%;"><?=$shortDes?></h1>
+                    <h1><?=$shortDes?></h1>
                 </div>
             </div>
             <div class="footerMenu">
@@ -111,6 +111,7 @@
             headerTwo.style.top = '65px';
         }, 1000);
     </script>
+    <script src="/public/js/jq.js"></script>
 </body>
 </html>
 

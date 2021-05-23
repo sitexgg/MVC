@@ -80,7 +80,7 @@
 		}
 	</style>
 	<div id="contentContainer" class="trans3d"> 
-	<section id="carouselContainer" class="trans3d" style="background-image: url('https://kazmkpu.kz/images/logo_kz.svg'); background-repeat: none; background-size: cover; border-radius: 1000px;">
+	<section id="carouselContainer" class="trans3d" style="background-image: url('/public/img/logo_kz.svg'); background-repeat: none; background-size: cover; border-radius: 1000px;">
 		<figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d" style="background-image: url('/public/img/slider/1.jpg'); background-size: cover;"></div></figure>
 		<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d" style="background-image: url('/public/img/slider/2.jpg'); background-size: cover;"></div></figure>
 		<figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d" style="background-image: url('/public/img/slider/3.jpg'); background-size: cover;"></div></figure>
