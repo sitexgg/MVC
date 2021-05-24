@@ -26,9 +26,8 @@ class AdminController extends Controller {
 
     public function newsAction() {
         $this->customAdmin();
-        if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date']) && empty($_POST['idNewsChange'])) {
-            $this->model->appendNews($_POST['title'], $_POST['content'], $_POST['date']);
-            exit('Добавлена новая новость');
+        if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date']) && !empty($_FILES['fileNews']) && empty($_POST['idNewsChange'])) {
+            $this->model->appendNews($_POST['title'], $_POST['content'], $_POST['date'], $_FILES['fileNews']);
         }
         if(!empty($_GET['idNews'])) {
             $news = $this->model->changeNews($_GET['idNews']);
@@ -37,8 +36,13 @@ class AdminController extends Controller {
             $news = $this->model->updateNews($_POST['idNewsChange'], $_POST['title'], $_POST['content'], $_POST['date']);
             exit('Новость отредактирована');
         }
-
-        
+        if(!empty($_POST['idNewsDel'])) {
+            $this->model->deletedNews($_POST['idNewsDel']);
+            exit('Новость удалена');
+        }
+        if(!empty($_REQUEST['fileNews'])) {
+            exit(123);
+        }
 
         $data = [
             'news' =>  $this->model->getNews(),

@@ -38,8 +38,37 @@ class Admin extends Model {
         exit('Страница создана');
     }
 
-    public function appendNews($title, $content, $date) {
-        $res = $this->db->insert('INSERT INTO mvc_news_'.$_SESSION['lang'].'(title, content, date) VALUES("'.$title.'","'.$content.'","'.$date.'");');
+    public function appendNews($title, $content, $date, $file) {
+
+        function gen_token() {
+            $token = sprintf(
+                '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0x0fff) | 0x4000,
+                mt_rand(0, 0x3fff) | 0x8000,
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff),
+                mt_rand(0, 0xffff)
+            );
+         
+            return $token;
+        }
+        $nameFile = 'aaa'.gen_token();
+
+        // Загрузка обложки новости
+        $typeFile = substr($_FILES['fileNews']['name'], strrpos($_FILES['fileNews']['name'], '.') + 1);
+        $file = $nameFile.'.'.$typeFile;
+        $uploaddir = './uploads/news/';
+        if (!file_exists('./uploads/news/')) {
+            mkdir('./uploads/news/', 0777, true);
+        }
+        $uploadfile = $uploaddir . basename($file);
+
+        move_uploaded_file($_FILES['fileNews']['tmp_name'], "./uploads/news/".$file);
+
+        $res = $this->db->insert('INSERT INTO mvc_news_'.$_SESSION['lang'].'(title, content, date, img) VALUES("'.$title.'","'.$content.'","'.$date.'", "'.$uploadfile.'");');
         return $res;
     }
 
@@ -51,7 +80,9 @@ class Admin extends Model {
         $news = $this->db->row('SELECT * FROM mvc_news_'.$_SESSION['lang'].' WHERE id = '.$id);
         return $news;
     }
-
+    public function deletedNews($id) {
+        $this->db->insert('DELETE FROM mvc_news_'.$_SESSION['lang'].' WHERE id = '.$id);
+    }
     public function updateNews($id, $title, $content, $date) {
         $res = $this->db->insert('UPDATE mvc_news_'.$_SESSION['lang'].' SET title = "'.$title.'" WHERE id = '.$id);
         $res = $this->db->insert('UPDATE mvc_news_'.$_SESSION['lang'].' SET content = "'.$content.'" WHERE id = '.$id);
