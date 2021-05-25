@@ -21,15 +21,24 @@ class Main extends Model {
         return $company;
     }
 
+    public function getNews() {
+        $news = $this->db->row('SELECT * FROM mvc_news_'.$_SESSION['lang']);
+        return $news;
+    }
+
     public function getData() {
         $menu = $this->getMenu();
         $subMenu = $this->getSubMenu();
 		$company = $this->getCompany();
+        $news = $this->getNews();
+
+
 		
         $data = [
 					'menu' => $menu,
                     'submenu' => $subMenu,
 					'company' => $company,
+                    'news' => $news,
 				];
         return $data;
     }

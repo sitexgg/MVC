@@ -21,12 +21,26 @@
 .ant-carousel-element {
   width: 300px;
   text-align: center;
+  height: 200px;
+  margin: 2px;
+  border-radius: 5px;
 }
-.ant-carousel-element > img {
-    height: 200px;
-    width: 298px;
+.ant-carousel-element:hover {
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	animation: showNews 16s linear;
 }
-
+@keyframes showNews {
+	0% {
+		background-size: 100%;
+	}
+	50% {
+		background-size: 300%;
+	}
+	100% {
+		background-size: 100%;
+	}
+}
 /* General styles */
 .ant-carousel {
   width: auto;
@@ -109,26 +123,13 @@ span.ant-dot {
 <div class="ant-carousel">
   <div class="ant-carousel-hider">
     <ul class="ant-carousel-list">
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img0.jpg" alt="0">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img1.jpg" alt="1">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img2.jpg" alt="2">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img3.jpg" alt="3">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img4.jpg" alt="4">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img5.jpg" alt="5">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img6.jpg" alt="6">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img7.jpg" alt="7">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img8.jpg" alt="8">
-      </li>
-      <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img9.jpg" alt="9">
-      </li>
+      
+		  <?php
+			foreach($data['news'] as $k => $v) {
+				$v['img'] = substr($v['img'], 1);
+				echo '<li class="ant-carousel-element" style="background: url(\''.$v['img'].'\');background-size: cover; background-repeat: no-repeat; background-position: center center;" onclick="location"></li>';
+			}
+		  ?>
     </ul>
   </div>
   <div class="ant-carousel-arrow-left"></div>

@@ -42,6 +42,7 @@
                 echo '<input type="file" class="btn" style="width: 20%; display: inline;" name="fileNews" id="fileNews">';  
             } else {
                 echo '<button class="btn" onclick="changeNews('.$data['changeNews'][0]['id'].');" style="width: 20%; display: inline;">Изменить новость</button>';
+                echo '<input type="file" class="btn" style="width: 20%; display: inline;" name="fileNews" id="fileNews">';
                 echo '<button class="btn" onclick="appendNews();" style="float: right; width: 20%; display: inline;">Добавить новость</button>'; 
             }
         ?>

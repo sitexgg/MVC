@@ -38,10 +38,8 @@ class AdminController extends Controller {
         }
         if(!empty($_POST['idNewsDel'])) {
             $this->model->deletedNews($_POST['idNewsDel']);
+            unset($_POST['idNewsDel']);
             exit('Новость удалена');
-        }
-        if(!empty($_REQUEST['fileNews'])) {
-            exit(123);
         }
 
         $data = [

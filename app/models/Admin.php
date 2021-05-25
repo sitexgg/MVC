@@ -39,6 +39,8 @@ class Admin extends Model {
     }
 
     public function appendNews($title, $content, $date, $file) {
+        $title = htmlentities($title);
+        $content = htmlentities($content);
 
         function gen_token() {
             $token = sprintf(
